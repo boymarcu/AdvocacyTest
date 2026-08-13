@@ -1,6 +1,7 @@
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { Badge } from '../../../components/ui/Badge'
+import { formatCadastro } from '../formatDate'
 import type { Lead } from '../types'
 
 interface LeadCardProps {
@@ -28,7 +29,12 @@ export function LeadCard({ lead, onClick }: LeadCardProps) {
       {...attributes}
       {...listeners}
     >
-      <div className="lead-card-name">{lead.nome}</div>
+      <div className="lead-card-header">
+        <span className="lead-card-name">{lead.nome}</span>
+        <span className="lead-card-date" title="Cadastrado em">
+          {formatCadastro(lead.created_at)}
+        </span>
+      </div>
       <div className="lead-card-meta">
         {lead.instagram && <>@{lead.instagram.replace(/^@/, '')} · </>}
         {lead.telefone}

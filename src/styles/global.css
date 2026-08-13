@@ -244,9 +244,23 @@ button {
   border-color: var(--color-primary);
 }
 
+.lead-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
 .lead-card-name {
   font-weight: 600;
-  margin-bottom: 4px;
+}
+
+.lead-card-date {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .lead-card-meta {
