@@ -1,7 +1,6 @@
-export function formatCadastro(iso: string): string {
-  return new Date(iso).toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: '2-digit',
-  })
+// data_contato vem como "YYYY-MM-DD" (sem hora). Formatar via split evita o Date
+// interpretar como UTC meia-noite e "voltar" um dia dependendo do fuso do navegador.
+export function formatDataContato(dataContato: string): string {
+  const [year, month, day] = dataContato.split('-')
+  return `${day}/${month}/${year.slice(2)}`
 }
