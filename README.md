@@ -20,7 +20,7 @@ Gera a pasta `dist/`, pronta para o GitHub Pages (o `base` em `vite.config.ts` j
 
 ## Deploy
 
-O workflow `.github/workflows/deploy.yml` builda e publica no GitHub Pages a cada push em `main`.
+O workflow `.github/workflows/deploy.yml` builda e publica no GitHub Pages a cada push em `master`.
 Configure `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` em Settings > Secrets and variables > Actions do repositório, e habilite Pages com source = "GitHub Actions".
 
 **Importante:** a anon key fica visível no bundle publicado (é pública por design). Quem protege os dados de verdade são as RLS policies do Supabase — sem sessão autenticada, a tabela `leads` fica inacessível.
